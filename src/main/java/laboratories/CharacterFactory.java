@@ -11,7 +11,7 @@ public class CharacterFactory {
     public static Character createCharacter() {
         String className = characterClasses[random.nextInt(characterClasses.length)];
         try {
-            Class<?> characterClass = Class.forName(className);
+            Class<?> characterClass = Class.forName("laboratories." + className);
             Constructor<?> constructor = characterClass.getConstructor();
             return (Character) constructor.newInstance();
         } catch (Exception e) {
