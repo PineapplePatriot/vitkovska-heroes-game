@@ -9,9 +9,9 @@ public class CharacterFactory {
     private static final Random random = new Random();
 
     public static Character createCharacter() {
-        String className = characterClasses[random.nextInt(characterClasses.length)];
+        String className = "laboratories." + characterClasses[random.nextInt(characterClasses.length)];
         try {
-            Class<?> characterClass = Class.forName("laboratories." + className);
+            Class<?> characterClass = Class.forName(className);
             Constructor<?> constructor = characterClass.getConstructor();
             return (Character) constructor.newInstance();
         } catch (Exception e) {
