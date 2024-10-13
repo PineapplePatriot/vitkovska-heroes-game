@@ -17,6 +17,19 @@ public abstract class Character {
         this.hp = Math.max(hp, 0); //Сеттер для ненульового хп
     }
 
+    public int getHp() {
+        return hp;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s{hp=%d, power=%d}", this.getClass().getSimpleName(), this.getHp(), this.getPower());
+    }
+
     public abstract void kick(Character c);  //Для підкласів
 }
 
